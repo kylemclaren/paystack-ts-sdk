@@ -408,6 +408,8 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/paymentrequest.ts">PaymentRequestLineItemsArray</a></code>
+- <code><a href="./src/resources/paymentrequest.ts">PaymentRequestTaxArray</a></code>
 - <code><a href="./src/resources/paymentrequest.ts">PaymentrequestCreateResponse</a></code>
 - <code><a href="./src/resources/paymentrequest.ts">PaymentrequestRetrieveResponse</a></code>
 - <code><a href="./src/resources/paymentrequest.ts">PaymentrequestUpdateResponse</a></code>
@@ -570,6 +572,8 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/dispute.ts">DisputeHistoryArray</a></code>
+- <code><a href="./src/resources/dispute.ts">DisputeMessagesArray</a></code>
 - <code><a href="./src/resources/dispute.ts">DisputeRetrieveResponse</a></code>
 - <code><a href="./src/resources/dispute.ts">DisputeUpdateResponse</a></code>
 - <code><a href="./src/resources/dispute.ts">DisputeListResponse</a></code>

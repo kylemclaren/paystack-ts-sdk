@@ -93,6 +93,8 @@ export {
 } from './directdebit';
 export {
   Dispute,
+  type DisputeHistoryArray,
+  type DisputeMessagesArray,
   type DisputeRetrieveResponse,
   type DisputeUpdateResponse,
   type DisputeListResponse,
@@ -133,6 +135,8 @@ export {
 } from './page';
 export {
   Paymentrequest,
+  type PaymentRequestLineItemsArray,
+  type PaymentRequestTaxArray,
   type PaymentrequestCreateResponse,
   type PaymentrequestRetrieveResponse,
   type PaymentrequestUpdateResponse,
