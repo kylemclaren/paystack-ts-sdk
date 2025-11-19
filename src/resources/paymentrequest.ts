@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../core/resource';
+import * as PaymentrequestAPI from './paymentrequest';
 import { APIPromise } from '../core/api-promise';
 import { RequestOptions } from '../internal/request-options';
 import { path } from '../internal/utils/path';
@@ -141,6 +142,20 @@ export class Paymentrequest extends APIResource {
   }
 }
 
+export interface PaymentRequestLineItemsArray {
+  amount: number;
+
+  name: string;
+
+  quantity: number;
+}
+
+export interface PaymentRequestTaxArray {
+  amount: number;
+
+  name: string;
+}
+
 export interface PaymentrequestCreateResponse {
   data: PaymentrequestCreateResponse.Data;
 
@@ -231,7 +246,7 @@ export namespace PaymentrequestRetrieveResponse {
 
     invoice_number: number | null;
 
-    line_items: Array<Data.LineItem>;
+    line_items: Array<PaymentrequestAPI.PaymentRequestLineItemsArray>;
 
     metadata: unknown;
 
@@ -251,7 +266,7 @@ export namespace PaymentrequestRetrieveResponse {
 
     status: string;
 
-    tax: Array<Data.Tax>;
+    tax: Array<PaymentrequestAPI.PaymentRequestTaxArray>;
   }
 
   export namespace Data {
@@ -273,20 +288,6 @@ export namespace PaymentrequestRetrieveResponse {
       phone: string;
 
       risk_action: string;
-    }
-
-    export interface LineItem {
-      amount: number;
-
-      name: string;
-
-      quantity: number;
-    }
-
-    export interface Tax {
-      amount: number;
-
-      name: string;
     }
   }
 
@@ -431,7 +432,7 @@ export namespace PaymentrequestListResponse {
 
     invoice_number: number | null;
 
-    line_items: Array<Data.LineItem>;
+    line_items: Array<PaymentrequestAPI.PaymentRequestLineItemsArray>;
 
     metadata: unknown;
 
@@ -451,7 +452,7 @@ export namespace PaymentrequestListResponse {
 
     status: string;
 
-    tax: Array<Data.Tax>;
+    tax: Array<PaymentrequestAPI.PaymentRequestTaxArray>;
   }
 
   export namespace Data {
@@ -473,20 +474,6 @@ export namespace PaymentrequestListResponse {
       phone: string;
 
       risk_action: string;
-    }
-
-    export interface LineItem {
-      amount: number;
-
-      name: string;
-
-      quantity: number;
-    }
-
-    export interface Tax {
-      amount: number;
-
-      name: string;
     }
   }
 
@@ -543,7 +530,7 @@ export namespace PaymentrequestFinalizeResponse {
 
     invoice_number: number | null;
 
-    line_items: Array<Data.LineItem>;
+    line_items: Array<PaymentrequestAPI.PaymentRequestLineItemsArray>;
 
     metadata: unknown;
 
@@ -565,7 +552,7 @@ export namespace PaymentrequestFinalizeResponse {
 
     status: string;
 
-    tax: Array<Data.Tax>;
+    tax: Array<PaymentrequestAPI.PaymentRequestTaxArray>;
   }
 
   export namespace Data {
@@ -599,20 +586,6 @@ export namespace PaymentrequestFinalizeResponse {
       amount: number;
 
       type: string;
-    }
-
-    export interface LineItem {
-      amount: number;
-
-      name: string;
-
-      quantity: number;
-    }
-
-    export interface Tax {
-      amount: number;
-
-      name: string;
     }
   }
 }
@@ -942,6 +915,8 @@ export interface PaymentrequestListParams {
 
 export declare namespace Paymentrequest {
   export {
+    type PaymentRequestLineItemsArray as PaymentRequestLineItemsArray,
+    type PaymentRequestTaxArray as PaymentRequestTaxArray,
     type PaymentrequestCreateResponse as PaymentrequestCreateResponse,
     type PaymentrequestRetrieveResponse as PaymentrequestRetrieveResponse,
     type PaymentrequestUpdateResponse as PaymentrequestUpdateResponse,

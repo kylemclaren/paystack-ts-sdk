@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../core/resource';
+import * as DisputeAPI from './dispute';
 import * as TransactionAPI from './transaction';
 import { APIPromise } from '../core/api-promise';
 import { RequestOptions } from '../internal/request-options';
@@ -139,6 +140,22 @@ export class Dispute extends APIResource {
   }
 }
 
+export interface DisputeHistoryArray {
+  by: string;
+
+  createdAt: string;
+
+  status: string;
+}
+
+export interface DisputeMessagesArray {
+  body: string;
+
+  createdAt: string;
+
+  sender: string;
+}
+
 export interface DisputeRetrieveResponse {
   data: DisputeRetrieveResponse.Data;
 
@@ -169,11 +186,11 @@ export namespace DisputeRetrieveResponse {
 
     evidence: unknown;
 
-    history: Array<Data.History>;
+    history: Array<DisputeAPI.DisputeHistoryArray>;
 
     last4: string;
 
-    messages: Array<Data.Message>;
+    messages: Array<DisputeAPI.DisputeMessagesArray>;
 
     note: unknown;
 
@@ -211,22 +228,6 @@ export namespace DisputeRetrieveResponse {
       phone: string;
 
       risk_action: string;
-    }
-
-    export interface History {
-      by: string;
-
-      createdAt: string;
-
-      status: string;
-    }
-
-    export interface Message {
-      body: string;
-
-      createdAt: string;
-
-      sender: string;
     }
 
     export interface Transaction {
@@ -367,11 +368,11 @@ export namespace DisputeUpdateResponse {
 
     evidence: unknown;
 
-    history: Array<Data.History>;
+    history: Array<DisputeAPI.DisputeHistoryArray>;
 
     last4: string;
 
-    messages: Array<Data.Message>;
+    messages: Array<DisputeAPI.DisputeMessagesArray>;
 
     note: unknown;
 
@@ -409,22 +410,6 @@ export namespace DisputeUpdateResponse {
       phone: string;
 
       risk_action: string;
-    }
-
-    export interface History {
-      by: string;
-
-      createdAt: string;
-
-      status: string;
-    }
-
-    export interface Message {
-      body: string;
-
-      createdAt: string;
-
-      sender: string;
     }
 
     export interface Transaction {
@@ -567,11 +552,11 @@ export namespace DisputeListResponse {
 
     evidence: unknown;
 
-    history: Array<Data.History>;
+    history: Array<DisputeAPI.DisputeHistoryArray>;
 
     last4: string;
 
-    messages: Array<Data.Message>;
+    messages: Array<DisputeAPI.DisputeMessagesArray>;
 
     note: unknown;
 
@@ -609,22 +594,6 @@ export namespace DisputeListResponse {
       phone: string | null;
 
       risk_action: string;
-    }
-
-    export interface History {
-      by: string;
-
-      createdAt: string;
-
-      status: string;
-    }
-
-    export interface Message {
-      body: string;
-
-      createdAt: string;
-
-      sender: string;
     }
 
     export interface Transaction {
@@ -827,7 +796,7 @@ export namespace DisputeListTransactionDisputesResponse {
 
     evidence: unknown;
 
-    history: Array<Data.History>;
+    history: Array<DisputeAPI.DisputeHistoryArray>;
 
     integration: number;
 
@@ -835,7 +804,7 @@ export namespace DisputeListTransactionDisputesResponse {
 
     merchant_transaction_reference: string;
 
-    messages: Array<Data.Message>;
+    messages: Array<DisputeAPI.DisputeMessagesArray>;
 
     note: unknown;
 
@@ -855,22 +824,6 @@ export namespace DisputeListTransactionDisputesResponse {
   }
 
   export namespace Data {
-    export interface History {
-      by: string;
-
-      createdAt: string;
-
-      status: string;
-    }
-
-    export interface Message {
-      body: string;
-
-      createdAt: string;
-
-      sender: string;
-    }
-
     export interface Transaction {
       id: number;
 
@@ -1180,6 +1133,8 @@ export interface DisputeResolveParams {
 
 export declare namespace Dispute {
   export {
+    type DisputeHistoryArray as DisputeHistoryArray,
+    type DisputeMessagesArray as DisputeMessagesArray,
     type DisputeRetrieveResponse as DisputeRetrieveResponse,
     type DisputeUpdateResponse as DisputeUpdateResponse,
     type DisputeListResponse as DisputeListResponse,

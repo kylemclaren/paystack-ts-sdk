@@ -80,9 +80,11 @@ import {
   DisputeExportParams,
   DisputeExportResponse,
   DisputeFetchUploadURLResponse,
+  DisputeHistoryArray,
   DisputeListParams,
   DisputeListResponse,
   DisputeListTransactionDisputesResponse,
+  DisputeMessagesArray,
   DisputeResolveParams,
   DisputeResolveResponse,
   DisputeRetrieveResponse,
@@ -113,6 +115,8 @@ import {
   PageUpdateResponse,
 } from './resources/page';
 import {
+  PaymentRequestLineItemsArray,
+  PaymentRequestTaxArray,
   Paymentrequest,
   PaymentrequestArchiveResponse,
   PaymentrequestCreateParams,
@@ -1310,6 +1314,8 @@ export declare namespace Paystack {
 
   export {
     Paymentrequest as Paymentrequest,
+    type PaymentRequestLineItemsArray as PaymentRequestLineItemsArray,
+    type PaymentRequestTaxArray as PaymentRequestTaxArray,
     type PaymentrequestCreateResponse as PaymentrequestCreateResponse,
     type PaymentrequestRetrieveResponse as PaymentrequestRetrieveResponse,
     type PaymentrequestUpdateResponse as PaymentrequestUpdateResponse,
@@ -1399,6 +1405,8 @@ export declare namespace Paystack {
 
   export {
     Dispute as Dispute,
+    type DisputeHistoryArray as DisputeHistoryArray,
+    type DisputeMessagesArray as DisputeMessagesArray,
     type DisputeRetrieveResponse as DisputeRetrieveResponse,
     type DisputeUpdateResponse as DisputeUpdateResponse,
     type DisputeListResponse as DisputeListResponse,
