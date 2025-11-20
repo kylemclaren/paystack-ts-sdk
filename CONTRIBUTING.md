@@ -42,15 +42,15 @@ If you’d like to use the repository from source, you can either install from g
 To install via git:
 
 ```sh
-$ npm install git+ssh://git@github.com:stainless-sdks/paystack-typescript.git
+$ npm install git+ssh://git@github.com:kylemclaren/paystack-ts-sdk.git
 ```
 
 Alternatively, to link a local copy of the repo:
 
 ```sh
 # Clone
-$ git clone https://www.github.com/stainless-sdks/paystack-typescript
-$ cd paystack-typescript
+$ git clone https://www.github.com/kylemclaren/paystack-ts-sdk
+$ cd paystack-ts-sdk
 
 # With yarn
 $ yarn link
