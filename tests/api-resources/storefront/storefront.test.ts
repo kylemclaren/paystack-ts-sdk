@@ -64,7 +64,11 @@ describe('resource storefront', () => {
     await expect(
       client.storefront.update(
         1559046,
-        { description: 'Import and Export', name: 'name', slug: 'slug' },
+        {
+          description: 'Import and Export',
+          name: 'name',
+          slug: 'slug',
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Paystack.NotFoundError);
@@ -86,7 +90,14 @@ describe('resource storefront', () => {
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.storefront.list({ page: 0, perPage: 0, status: 'active' }, { path: '/_stainless_unknown_path' }),
+      client.storefront.list(
+        {
+          page: 0,
+          perPage: 0,
+          status: 'active',
+        },
+        { path: '/_stainless_unknown_path' },
+      ),
     ).rejects.toThrow(Paystack.NotFoundError);
   });
 

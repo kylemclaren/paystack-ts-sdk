@@ -25,7 +25,11 @@ describe('resource directdebit', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.directdebit.listMandateAuthorizations(
-        { cursor: 'cursor', per_page: 0, status: 'pending' },
+        {
+          cursor: 'cursor',
+          per_page: 0,
+          status: 'pending',
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Paystack.NotFoundError);

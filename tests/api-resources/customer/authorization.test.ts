@@ -50,7 +50,11 @@ describe('resource authorization', () => {
       channel: 'direct_debit',
       email: 'ravi@demo.com',
       account: { bank_code: '058', number: '0123456789' },
-      address: { city: 'Lagos', state: 'Lagos', street: '123 Main Street' },
+      address: {
+        city: 'Lagos',
+        state: 'Lagos',
+        street: '123 Main Street',
+      },
       callback_url: 'http://test.url.com',
     });
   });

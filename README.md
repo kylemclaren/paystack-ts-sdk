@@ -47,7 +47,9 @@ const client = new Paystack({
 });
 
 const params: Paystack.TransactionInitializeParams = { amount: 10000, email: 'test@demo.com' };
-const response: Paystack.TransactionInitializeResponse = await client.transaction.initialize(params);
+const response: Paystack.TransactionInitializeResponse = await client.transaction.initialize(
+  params,
+);
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -142,7 +144,9 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 ```ts
 const client = new Paystack();
 
-const response = await client.transaction.initialize({ amount: 10000, email: 'test@demo.com' }).asResponse();
+const response = await client.transaction
+  .initialize({ amount: 10000, email: 'test@demo.com' })
+  .asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 

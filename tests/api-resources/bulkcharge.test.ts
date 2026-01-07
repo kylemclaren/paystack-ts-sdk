@@ -70,7 +70,14 @@ describe('resource bulkcharge', () => {
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.bulkcharge.list({ page: 0, perPage: 0, status: 'active' }, { path: '/_stainless_unknown_path' }),
+      client.bulkcharge.list(
+        {
+          page: 0,
+          perPage: 0,
+          status: 'active',
+        },
+        { path: '/_stainless_unknown_path' },
+      ),
     ).rejects.toThrow(Paystack.NotFoundError);
   });
 
@@ -92,7 +99,11 @@ describe('resource bulkcharge', () => {
     await expect(
       client.bulkcharge.listCharges(
         'BCH_180tl7oq7cayggh',
-        { page: 0, perPage: 0, status: 'success' },
+        {
+          page: 0,
+          perPage: 0,
+          status: 'success',
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Paystack.NotFoundError);
