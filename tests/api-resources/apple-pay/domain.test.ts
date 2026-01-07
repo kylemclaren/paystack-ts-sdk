@@ -25,7 +25,11 @@ describe('resource domain', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.applePay.domain.list(
-        { next: 'next', previous: 'previous', use_cursor: true },
+        {
+          next: 'next',
+          previous: 'previous',
+          use_cursor: true,
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Paystack.NotFoundError);

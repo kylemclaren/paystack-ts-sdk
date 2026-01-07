@@ -47,7 +47,11 @@ describe('resource event', () => {
     await expect(
       client.terminal.event.send(
         'Z0R4orOU',
-        { action: 'process', data: { id: 7895939, reference: '4634337895939' }, type: 'invoice' },
+        {
+          action: 'process',
+          data: { id: 7895939, reference: '4634337895939' },
+          type: 'invoice',
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Paystack.NotFoundError);

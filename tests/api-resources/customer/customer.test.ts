@@ -61,7 +61,12 @@ describe('resource customer', () => {
     await expect(
       client.customer.update(
         'CUS_c6wqvwmvwopw4ms',
-        { first_name: 'Cecilia', last_name: 'Jones', metadata: 'metadata', phone: 'phone' },
+        {
+          first_name: 'Cecilia',
+          last_name: 'Jones',
+          metadata: 'metadata',
+          phone: 'phone',
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Paystack.NotFoundError);
@@ -114,7 +119,11 @@ describe('resource customer', () => {
   test.skip('initializeDirectDebit: only required params', async () => {
     const responsePromise = client.customer.initializeDirectDebit(297346561, {
       account: { bank_code: '058', number: '0123456789' },
-      address: { city: 'Ikeja', state: 'Lagos', street: 'Some Where' },
+      address: {
+        city: 'Ikeja',
+        state: 'Lagos',
+        street: 'Some Where',
+      },
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -129,7 +138,11 @@ describe('resource customer', () => {
   test.skip('initializeDirectDebit: required and optional params', async () => {
     const response = await client.customer.initializeDirectDebit(297346561, {
       account: { bank_code: '058', number: '0123456789' },
-      address: { city: 'Ikeja', state: 'Lagos', street: 'Some Where' },
+      address: {
+        city: 'Ikeja',
+        state: 'Lagos',
+        street: 'Some Where',
+      },
     });
   });
 

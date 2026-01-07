@@ -37,7 +37,12 @@ describe('resource balance', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.balance.fetchLedger(
-        { from: '2019-12-27T18:11:19.117Z', page: 0, perPage: 0, to: '2019-12-27T18:11:19.117Z' },
+        {
+          from: '2019-12-27T18:11:19.117Z',
+          page: 0,
+          perPage: 0,
+          to: '2019-12-27T18:11:19.117Z',
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Paystack.NotFoundError);

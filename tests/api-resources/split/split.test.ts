@@ -67,7 +67,12 @@ describe('resource split', () => {
     await expect(
       client.split.update(
         'id',
-        { active: true, bearer_subaccount: 'bearer_subaccount', bearer_type: 'subaccount', name: 'name' },
+        {
+          active: true,
+          bearer_subaccount: 'bearer_subaccount',
+          bearer_type: 'subaccount',
+          name: 'name',
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Paystack.NotFoundError);

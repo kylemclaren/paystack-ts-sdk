@@ -92,7 +92,13 @@ describe('resource transferrecipient', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.transferrecipient.list(
-        { next: 'next', page: 0, per_page: 0, previous: 'previous', use_cursor: true },
+        {
+          next: 'next',
+          page: 0,
+          per_page: 0,
+          previous: 'previous',
+          use_cursor: true,
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Paystack.NotFoundError);
@@ -113,7 +119,14 @@ describe('resource transferrecipient', () => {
   // Prism tests are disabled
   test.skip('createBulk: only required params', async () => {
     const responsePromise = client.transferrecipient.createBulk({
-      batch: [{ account_number: '01000000010', bank_code: '058', name: 'Smith Taplo', type: 'nuban' }],
+      batch: [
+        {
+          account_number: '01000000010',
+          bank_code: '058',
+          name: 'Smith Taplo',
+          type: 'nuban',
+        },
+      ],
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);

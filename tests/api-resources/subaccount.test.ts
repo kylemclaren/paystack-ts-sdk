@@ -103,7 +103,14 @@ describe('resource subaccount', () => {
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.subaccount.list({ active: true, page: 0, perPage: 0 }, { path: '/_stainless_unknown_path' }),
+      client.subaccount.list(
+        {
+          active: true,
+          page: 0,
+          perPage: 0,
+        },
+        { path: '/_stainless_unknown_path' },
+      ),
     ).rejects.toThrow(Paystack.NotFoundError);
   });
 });
