@@ -11,7 +11,7 @@ It is generated with [Stainless](https://www.stainless.com/).
 ## Installation
 
 ```sh
-npm install git+ssh://git@github.com:stainless-sdks/paystack-typescript.git
+npm install git+ssh://git@github.com:kylemclaren/paystack-ts-sdk.git
 ```
 
 > [!NOTE]
@@ -47,7 +47,9 @@ const client = new Paystack({
 });
 
 const params: Paystack.TransactionInitializeParams = { amount: 10000, email: 'test@demo.com' };
-const response: Paystack.TransactionInitializeResponse = await client.transaction.initialize(params);
+const response: Paystack.TransactionInitializeResponse = await client.transaction.initialize(
+  params,
+);
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -142,7 +144,9 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 ```ts
 const client = new Paystack();
 
-const response = await client.transaction.initialize({ amount: 10000, email: 'test@demo.com' }).asResponse();
+const response = await client.transaction
+  .initialize({ amount: 10000, email: 'test@demo.com' })
+  .asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
@@ -340,7 +344,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/paystack-typescript/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/kylemclaren/paystack-ts-sdk/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 

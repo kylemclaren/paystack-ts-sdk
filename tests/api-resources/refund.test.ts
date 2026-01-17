@@ -60,7 +60,12 @@ describe('resource refund', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.refund.list(
-        { from: '2019-12-27T18:11:19.117Z', page: 0, perPage: 0, to: '2019-12-27T18:11:19.117Z' },
+        {
+          from: '2019-12-27T18:11:19.117Z',
+          page: 0,
+          perPage: 0,
+          to: '2019-12-27T18:11:19.117Z',
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Paystack.NotFoundError);
@@ -69,7 +74,11 @@ describe('resource refund', () => {
   // Prism tests are disabled
   test.skip('retryWithCustomerDetails: only required params', async () => {
     const responsePromise = client.refund.retryWithCustomerDetails(15581137, {
-      refund_account_details: { account_number: '1234567890', bank_id: '9', currency: 'NGN' },
+      refund_account_details: {
+        account_number: '1234567890',
+        bank_id: '9',
+        currency: 'NGN',
+      },
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -83,7 +92,11 @@ describe('resource refund', () => {
   // Prism tests are disabled
   test.skip('retryWithCustomerDetails: required and optional params', async () => {
     const response = await client.refund.retryWithCustomerDetails(15581137, {
-      refund_account_details: { account_number: '1234567890', bank_id: '9', currency: 'NGN' },
+      refund_account_details: {
+        account_number: '1234567890',
+        bank_id: '9',
+        currency: 'NGN',
+      },
     });
   });
 });
